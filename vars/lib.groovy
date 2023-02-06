@@ -1,6 +1,9 @@
-def build(message)  {
+def build()  {
     node {
-        echo "INFO: ${message}"
+        git url: '${giturlrepo}'
+        sh "${cmdname}"
+        sh "sudo docker build -t webdevprashant/javaapp:${BUILD_NUMBER} ."
+        sh "sudo docker run  -d -p 1222:8080 --name myjavaapp webdevprashant/javaapp:${BUILD_NUMBER}" 
     }
 }
     
