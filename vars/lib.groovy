@@ -1,5 +1,3 @@
-node  {
-
 def build(giturlrepo, cmdname)  {
     
     git url: '${giturlrepo}'
@@ -20,5 +18,3 @@ def push()                  {
                     }
                     sh "sudo docker push webdevprashant/javaapp:${BUILD_NUMBER}"
     }
-    
-}
