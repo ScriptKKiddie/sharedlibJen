@@ -9,8 +9,12 @@ def build()  {
     }
 }
     
-def test(message)  {
-    echo "INFO: ${message}"
+def test()  {
+    node {
+        // echo "INFO: ${message}"
+        sh "curl --silent http://100.26.169.230:1222/java-web-app/ |  grep -i Hello"
+    }
+    
 }
 
 def push()  {
