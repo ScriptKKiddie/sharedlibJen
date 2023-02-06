@@ -1,6 +1,7 @@
 def build()  {
     node {
-        // git url: '${giturlrepo}'
+        // sh "git url: '${giturlrepo}'
+        git url: "git@github.com:webdevprashant/javaapp"
         sh "mvn clean package"
         sh "sudo docker build -t webdevprashant/javaapp:${BUILD_NUMBER} ."
         sh "sudo docker run  -d -p 1222:8080 --name myjavaapp webdevprashant/javaapp:${BUILD_NUMBER}" 
