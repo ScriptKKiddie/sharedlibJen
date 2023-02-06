@@ -6,6 +6,6 @@ def test(message)  {
     echo "INFO: ${message}"
 }
 
-def push(message)  {
+def push()  {
     echo "INFO: Pushing"
 }
