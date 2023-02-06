@@ -1,20 +1,11 @@
-def build(giturlrepo, cmdname)  {
-    
-    git url: '${giturlrepo}'
-    sh "${cmdname}"
-    
-    sh "sudo docker build -t webdevprashant/javaapp:${BUILD_NUMBER} ."
-    sh "sudo docker run  -d -p 1222:8080 --name myjavaapp webdevprashant/javaapp:${BUILD_NUMBER}" 
+def build(message)  {
+    echo "INFO: ${message}"
 }
     
-    
-def test(ip , searchitem)    {
-        sh "curl --silent http://${ip}:1222/java-web-app/ |  grep -i ${searchitem}"
+def test(message)  {
+    echo "INFO: ${message}"
 }
-    
-def push()                  {
-         withCredentials([string(credentialsId: 'Docker_hub_password', variable: 'VAR_FOR_DOCKERPASS')]) {
-                    sh "sudo docker login -u webdevprashant -p $VAR_FOR_DOCKERPASS"
-                    }
-                    sh "sudo docker push webdevprashant/javaapp:${BUILD_NUMBER}"
-    }
+
+def push(message)  {
+    echo "INFO: Pushing"
+}
