@@ -12,7 +12,7 @@ def build()  {
 def test()  {
     node {
         // echo "INFO: ${message}"
-        sh "curl --silent http://54.197.97.178:1222/java-web-app/ |  grep -i Hello"
+        sh "curl --silent http://34.234.204.200:1222/java-web-app/ |  grep -i Hello"
     }
     
 }
