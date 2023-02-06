@@ -1,5 +1,7 @@
 def build(message)  {
-    echo "INFO: ${message}"
+    node {
+        echo "INFO: ${message}"
+    }
 }
     
 def test(message)  {
